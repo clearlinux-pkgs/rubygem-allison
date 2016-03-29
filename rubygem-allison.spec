@@ -4,7 +4,7 @@
 #
 Name     : rubygem-allison
 Version  : 2.0.3
-Release  : 4
+Release  : 5
 URL      : https://rubygems.org/downloads/allison-2.0.3.gem
 Source0  : https://rubygems.org/downloads/allison-2.0.3.gem
 Summary  : No detailed summary available
@@ -37,17 +37,17 @@ gem spec %{SOURCE0} -l --ruby > rubygem-allison.gemspec
 gem build rubygem-allison.gemspec
 
 %install
-gem_dir=$(ruby -e'puts Gem.default_dir')
+%global gem_dir $(ruby -e'puts Gem.default_dir')
 gem install -V \
 --local \
 --force \
---install-dir .${gem_dir} \
+--install-dir .%{gem_dir} \
 --bindir .%{_bindir} \
 allison-2.0.3.gem
 
-mkdir -p %{buildroot}${gem_dir}
-cp -pa .${gem_dir}/* \
-%{buildroot}${gem_dir}
+mkdir -p %{buildroot}%{gem_dir}
+cp -pa .%{gem_dir}/* \
+%{buildroot}%{gem_dir}
 
 if [ -d .%{_bindir} ]; then
 mkdir -p %{buildroot}%{_bindir}
@@ -55,44 +55,36 @@ cp -pa .%{_bindir}/* \
 %{buildroot}%{_bindir}/
 fi
 
+
 %files
 %defattr(-,root,root,-)
-/usr/lib64/ruby/gems/2.2.0/cache/allison-2.0.3.gem
-/usr/lib64/ruby/gems/2.2.0/doc/allison-2.0.3/ri/RDoc/Page/Allison/cdesc-Allison.ri
-/usr/lib64/ruby/gems/2.2.0/doc/allison-2.0.3/ri/RDoc/Page/cdesc-Page.ri
-/usr/lib64/ruby/gems/2.2.0/doc/allison-2.0.3/ri/RDoc/cdesc-RDoc.ri
-/usr/lib64/ruby/gems/2.2.0/doc/allison-2.0.3/ri/String/cdesc-String.ri
-/usr/lib64/ruby/gems/2.2.0/doc/allison-2.0.3/ri/String/if_exists-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/allison-2.0.3/ri/String/loop-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/allison-2.0.3/ri/cache.ri
-/usr/lib64/ruby/gems/2.2.0/doc/allison-2.0.3/ri/lib/page-allison_css.ri
-/usr/lib64/ruby/gems/2.2.0/doc/allison-2.0.3/ri/lib/page-allison_js.ri
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/CHANGELOG
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/LICENSE
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/Manifest
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/README
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/allison.gemspec
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/bin/allison
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/BODY
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/CLASS_INDEX
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/CLASS_PAGE
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/FILE_INDEX
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/FILE_PAGE
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/FONTS
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/FR_INDEX_BODY
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/INDEX
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/JAVASCRIPT
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/METHOD_INDEX
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/METHOD_LIST
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/SRC_PAGE
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/cache/STYLE
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/contrib/Rakefile
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/contrib/rdoc_patch.rb
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/contrib/rdoc_patch_test.rb
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/lib/allison.css
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/lib/allison.js
-/usr/lib64/ruby/gems/2.2.0/gems/allison-2.0.3/lib/allison.rb
-/usr/lib64/ruby/gems/2.2.0/specifications/allison-2.0.3.gemspec
+/usr/lib64/ruby/gems/2.3.0/cache/allison-2.0.3.gem
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/CHANGELOG
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/LICENSE
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/Manifest
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/README
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/allison.gemspec
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/bin/allison
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/BODY
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/CLASS_INDEX
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/CLASS_PAGE
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/FILE_INDEX
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/FILE_PAGE
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/FONTS
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/FR_INDEX_BODY
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/INDEX
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/JAVASCRIPT
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/METHOD_INDEX
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/METHOD_LIST
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/SRC_PAGE
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/cache/STYLE
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/contrib/Rakefile
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/contrib/rdoc_patch.rb
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/contrib/rdoc_patch_test.rb
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/lib/allison.css
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/lib/allison.js
+/usr/lib64/ruby/gems/2.3.0/gems/allison-2.0.3/lib/allison.rb
+/usr/lib64/ruby/gems/2.3.0/specifications/allison-2.0.3.gemspec
 
 %files bin
 %defattr(-,root,root,-)
