@@ -4,7 +4,7 @@
 #
 Name     : rubygem-allison
 Version  : 2.0.3
-Release  : 5
+Release  : 6
 URL      : https://rubygems.org/downloads/allison-2.0.3.gem
 Source0  : https://rubygems.org/downloads/allison-2.0.3.gem
 Summary  : No detailed summary available
