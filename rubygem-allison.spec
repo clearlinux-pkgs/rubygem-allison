@@ -4,7 +4,7 @@
 #
 Name     : rubygem-allison
 Version  : 2.0.3
-Release  : 7
+Release  : 8
 URL      : https://rubygems.org/downloads/allison-2.0.3.gem
 Source0  : https://rubygems.org/downloads/allison-2.0.3.gem
 Summary  : No detailed summary available
@@ -34,6 +34,7 @@ gem unpack %{SOURCE0}
 gem spec %{SOURCE0} -l --ruby > rubygem-allison.gemspec
 
 %build
+export LANG=C
 gem build rubygem-allison.gemspec
 
 %install
